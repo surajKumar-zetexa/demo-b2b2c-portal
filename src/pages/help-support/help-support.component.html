@@ -1,0 +1,189 @@
+<div class="zet-db">
+
+    <div class="zet-toolbar pt-5 pb-3 py-lg-6">
+        <div class="container container-xxl">
+            <div class="zet-toolbar-wrapper d-flex justify-content-between align-items-center">
+                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+                    <h5 class="mb-0 fw-medium fs-4">Help & Support</h5>
+                </div>
+
+                <!-- <div class="d-flex align-items-center gap-2 gap-lg-3">
+                    <div class="search-form">
+                        <div class="form-group has-search">
+                            <span class="form-control-feedback"><i class="bi bi-search"></i></span>
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                    </div>
+    
+                    <div class="page-buttons ">
+                        <button routerLink="/dashboard/add-product" mat-button><span class="material-symbols-outlined">
+                            add
+                            </span>Add Customer</button>
+                    </div>
+                </div> -->
+
+            </div>
+            <div class="zet-toolbar-tabs">
+                <ul>
+                    <li (click)="activeCustomers()" [class.active]="showActive" >FAQs</li>
+                    <li (click)="expired()" [class.active]="showExpired">Chat Support</li>
+                </ul>
+                
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="zet-content" >
+        <div class="app-container container-xxl" >
+            <div class="card mt-4">
+                    <div class="faqs_wrapper" *ngIf="showActive">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="faqs-wrapper-card">
+                                    <h5>When should I set up my eSIM?</h5>
+                                    <p>You can wait until you arrive in the country to activate your eSIM, but please remember that you will need a Wi-Fi connection to perform the installation process</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="faqs-wrapper-card">
+                                    <h5>What happens if I use up my data or exhaust 
+                                        the days of validity?</h5>
+                                    <p>If you find you need more data than what your eSIM offers,
+                                        the best option is to top up your eSIM card with the right
+                                        amount of data for you.</p>
+                                </div>
+                            </div>
+                       
+                            <div class="col-md-6">
+                                <div class="faqs-wrapper-card">
+                                    <h5>Can I use my SIM card and Zetexa eSIM at the
+                                        same time?</h5>
+                                    <p>Yes. Please remember that if you leave your SIM card activated,
+                                        your network provider may apply data roaming charges to make or receive phone calls, and to send or receive text messages.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="faqs-wrapper-card">
+                                    <h5>Is my phone “unlocked” and able to use eSIMs?</h5>
+                                    <p>Only unlocked phones are compatible with eSIMs. You should
+                                        make sure that your phone is unlocked before buying an eSIM
+                                        from the Zetexa store.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="faqs-wrapper-card">
+                                    <h5>What should I do if I’ve deleted or lost the QR
+                                        code for my eSIM?</h5>
+                                    <p>If you cannot find the QR code or have deleted it by mistake, please get in touch with us by sending an email to zetexa.com  or via our online chat, and we’ll resend the code to you.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="faqs-wrapper-card">
+                                    <h5>My QR code isn’t working. What should I do?</h5>
+                                    <p>There are a number of reasons you might be having trouble
+                                        scanning your QR code. We have created a checklist so you can easily identify the problem.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="faqs-wrapper-card">
+                                    <h5>Is there a physical store for Zetexa</h5>
+                                    <p>No, Zetexa does not operate any physical stores. You can
+                                        exclusively purchase your eSIM through the official website
+                                        and our App.
+                                        </p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        
+                    </div>
+
+
+                    <div class="faqs_wrapper" *ngIf="showExpired">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="faqs-wrapper-card">
+                                    <h5>Installing eSIM(s) On Android Devices</h5>
+                                    <p>This help guide walks you through the steps required to install an eSIM on Android Device's</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="faqs-wrapper-card">
+                                    <h5>Installing eSIM(s) On iOS Devices</h5>
+                                    <p>This help guide walks you through the steps required to install an eSIM on Android Device's</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="faqs-wrapper-card">
+                                    <h5>How to install eSIM if my phone is not compatible?</h5>
+                                    <p>This help guide walks you through the steps required to install an eSIM on Android Device's</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="faqs-wrapper-card">
+                                    <h5>Is my phone eSIM compatible?</h5>
+                                    <p>This help guide walks you through the steps required to install an eSIM on Android Device's</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="faqs-wrapper-card">
+                                    <h5>Why should I use Zetexa?</h5>
+                                    <p>This help guide walks you through the steps required to install an eSIM on Android Device's</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="faqs-wrapper-card">
+                                    <h5>Can I top-up my eSIM?</h5>
+                                    <p>This help guide walks you through the steps required to install an eSIM on Android Device's</p>
+                                </div>
+                            </div>
+                            
+
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="zetexa-chat-card">
+                                    <h4>Installing eSIM(s) On Android Device's</h4>
+                                    <p>This help guide walks you through the steps required to install an eSIM on Android Device's, the guide was created using a Samsung Galaxy S21 with the most recent version of Android software available at the time, Android 13.</p>
+                                </div>
+                                <div class="zetexa-chat-card">
+                                    <h4>Go your phone settings</h4>
+                                    <p>First, make sure your Android device supports eSIM. Many modern Android devices do, but not all. You can typically find this information in your device's settings or user manual.</p>
+                                </div>
+
+                                <div class="zetexa-chat-card">
+                                    <h4>Your eSIM would have been added</h4>
+                                    <p>First, make sure your Android device supports eSIM. Many modern Android devices do, but not all. You can typically find this information in your device's settings or user manual.</p>
+                                </div>
+
+                                <div class="zetexa-chat-card">
+                                    <h4>Enable your eSIM and switch on data roaming</h4>
+                                    <p>First, make sure your Android device supports eSIM. Many modern Android devices do, but not all. You can typically find this information in your device's settings or user manual.</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        
+                    </div>
+            </div>
+        </div>
+    </div>
+   
+
+</div>

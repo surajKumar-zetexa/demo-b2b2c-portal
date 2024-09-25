@@ -1,0 +1,145 @@
+<div class="zet-db">
+
+    <div class="zet-toolbar pt-5 pb-3 py-lg-6">
+        <div class="container container-xxl">
+            <div class="zet-toolbar-wrapper d-flex justify-content-between align-items-center">
+                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+                    <h5 class="mb-0 fw-medium fs-4">Order Summary</h5>
+                </div>
+            </div>
+            
+
+
+        </div>
+    </div>
+
+    <div class="zet-content" >
+        <div class="app-container container-xxl" >
+            <div class="row justify-content-between">
+                <div class="col-md-7">
+                   <div class="order-summary-wrapper">
+                        <div class="order-summary-card" *ngFor="let obj of orderList">
+                            <div class="d-flex ">
+                                <div class="country-flag">
+                                    <img src="assets/img/order-sumey-usflag.png" alt="">
+                                </div>
+                                <div class="order-summary-card-body">
+                                    <div class="header d-flex justify-content-between">
+                                        <div class="header-left">
+                                            <h1>United States</h1>
+                                            <ul class="d-flex">
+                                                <li>
+                                                    <i class="bi bi-reception-4"></i>
+                                                    1 GB
+                                                </li>
+
+                                                <li>
+                                                    <i class="bi bi-chat-left-dots"></i>
+                                                    50 sms
+                                                </li>
+
+                                                <li>
+                                                    <i class="bi bi-telephone"></i>
+                                                    1000 mins
+                                                </li>
+
+                                                <li>
+                                                    <i class="bi bi-calendar2-minus"></i>
+                                                    7 Days
+                                                </li>
+
+
+                                            </ul>
+                                        </div>
+                                        <div class="page-buttons">
+                                            <button mat-button><i class="bi bi-trash"></i> Delete</button>
+                                        </div>
+                                    </div>
+                                    <div class="pricing-wrapper">
+                                        <div class="d-flex justify-content-between">
+                                            <div class="pricing">
+                                                <ul>
+                                                    <li >
+                                                        <h3>$3.50 <del>$4.50</del></h3>
+                                                        
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="product-increase-btns">
+                                                <ul>
+                                                    <li class="d-flex align-items-center">
+                                                        <div class="icon" (click)="decrement(obj)">
+                                                            <i class="bi bi-dash"></i>
+                                                        </div>
+                                                        <div class="number-raise">
+                                                            <p>{{obj.count}}</p>
+                                                        </div>
+                                                        <div class="icon" (click)="increment(obj)">
+                                                            <i class="bi bi-plus"></i>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-summary-card-footer">
+                                <div class="card-footer-btns d-flex justify-content-end">
+                                    <button mat-button>Add to Inventory</button>
+                                    <button (click)="openDialog()" mat-button>Assign to</button>
+                                </div>
+                            </div>
+                        </div>
+                   </div>
+
+
+
+                    <div class="add-adress-btns ">
+                        <button (click)="proceedPayment()" mat-button class="button-bg">Proceed to Payment</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="billing-address-wraper">
+                        <ul>
+                            <li class="d-flex align-items-center">
+                                <div class="number-icon d-flex align-items-center">
+                                    <h4>1</h4>
+                                </div>
+                                <div class="address-billing">
+                                    <h3>Billing Address <button>change</button></h3>
+                                    <p>You have 4 saved address</p>
+                                </div>
+                            </li>
+
+
+                            <li class="d-flex align-items-center">
+                                <div class="number-icon d-flex align-items-center">
+                                    <h4>2</h4>
+                                </div>
+                                <div class="address-billing">
+                                    <h3>Order Summary</h3>
+                                    <p>46,Madhapur, Madhapur, Hyderabad</p>
+                                </div>
+                            </li>
+
+
+
+                            <li class="d-flex align-items-center">
+                                <div class="number-icon d-flex align-items-center">
+                                    <h4>3</h4>
+                                </div>
+                                <div class="address-billing">
+                                    <h3>Payment</h3>
+                                    
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+</div>

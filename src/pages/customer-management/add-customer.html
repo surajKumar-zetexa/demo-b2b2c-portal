@@ -1,0 +1,117 @@
+<div class="dialog-container">
+    <div class="dialog-header text-center text-white ">
+        <h3 class="mb-0">{{dialogData ? 'Update' : 'Add'}} Customer</h3>
+        <button (click)="close()" class="close"><i class="bi bi-x-lg"></i></button>
+    </div>
+
+
+    <div class="form-wrapper">
+        <form [formGroup]="addUserForm">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-card">
+                        <label>First Name</label>
+                        <mat-form-field appearance="fill">
+                            <input matInput placeholder="Enter First name" formControlName="first_name">
+                        </mat-form-field>
+                    </div>
+                </div>
+    
+                <div class="col-md-6">
+                    <div class="input-card">
+                        <label>Last Name</label>
+                        <mat-form-field appearance="fill">
+                            <input matInput placeholder="Enter Last Name" formControlName="last_name">
+                        </mat-form-field>
+                    </div>
+                </div>
+    
+                <div class="col-md-6">
+                    <div class="input-card">
+                        <label>Mail</label>
+                        <mat-form-field appearance="fill">
+                            <input matInput placeholder="Enter mail" formControlName="email">
+                        </mat-form-field>
+                    </div>
+                </div>
+    
+                <div class="col-md-6">
+                    <div class="input-card">
+                        <label>Mobile Number</label>
+                        <mat-form-field appearance="fill">
+                            <input matInput placeholder="Enter number" formControlName="phone">
+                        </mat-form-field>
+                    </div>
+                </div>
+    
+                <div class="col-md-6">
+                    <div class="input-card">
+                        <label>Date of Birth</label>
+                        <mat-form-field class="example-full-width">
+                            <input readonly (click)="picker.open()" (focus)="picker.open()"
+                                formControlName="date_of_birth" matInput [matDatepicker]="picker"
+                                placeholder="Date of Birth">
+                            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="input-card">
+                        <label>Address</label>
+                        <mat-form-field appearance="fill">
+                            <input matInput placeholder="Enter Address" formControlName="address">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-card">
+                        <label>City</label>
+                        <mat-form-field appearance="fill">
+                            <input matInput placeholder="Enter City" formControlName="city">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-card">
+                        <label>Country</label>
+                        <!-- <mat-form-field appearance="fill">
+                            <input matInput placeholder="Enter Country" formControlName="country">
+                        </mat-form-field> -->
+                        <mat-form-field appearance="fill">
+                            <mat-select placeholder="Select Country"   formControlName="country" >
+                                <mat-option *ngFor="let country of countries"  [value]="country.name"> {{ country.name }}</mat-option>                                
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-card">
+                        <label>Postal Code</label>
+                        <mat-form-field appearance="fill">
+                            <input matInput placeholder="Enter Postal Code" formControlName="postal_code">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+
+            </div>
+        </form>
+       
+    </div>
+
+
+
+
+    <div class="dialog-footer">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <button mat-button (click)="add()" >{{dialogData ? 'Update' : 'Add'}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

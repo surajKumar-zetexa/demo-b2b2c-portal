@@ -1,0 +1,133 @@
+<app-dialog (formDataSaved)="receiveFormData($event)"></app-dialog>
+
+<div class="zet-db">
+
+    <rapi-doc
+      spec-url = "https://petstore.swagger.io/v2/swagger.json"
+    > </rapi-doc> 
+
+    <div class="zet-toolbar pt-5 pb-3 py-lg-6">
+        <div class="container container-xxl">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="wallet-card">
+                        <h5>Your Wallet Balance</h5>
+                        <h1>$ 450.66 <span>USD</span></h1>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="add-money-wallet middle">
+                        <form action="">
+                            <div class="input-card input-card1 position-relative">
+                                <div class="icon">
+                                    <i class="bi bi-currency-dollar"></i>
+                                </div>
+                                <mat-form-field appearance="fill">
+                                    <input matInput placeholder="Enter Amount">
+                                </mat-form-field>
+                            </div>
+                            <div class="input-card1">
+                                <button mat-button (click)="addMoney()"><i class="bi bi-plus"></i> Add money to wallet</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="zet-content" >
+        <div class="app-container container-xxl" >
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="heading">
+                        <h6>Transactions </h6>
+                    </div>
+                    <div class="card">
+                        <div class="card-body pt-0">
+                            <div class="table_wrapper transaction-table" >
+                                
+                                <div class="table-responsive">
+        
+                                    <table mat-table [dataSource]="dataSource">
+        
+                                        <ng-container matColumnDef="transactionDate">
+                                            <th mat-header-cell *matHeaderCellDef> Transaction Details </th>
+                                            <td mat-cell *matCellDef="let element">
+                                               <h5 class="mb-0">{{element.transactionDate}}</h5>
+                                               <h5 class="mb-0">Transaction Id: {{element.transactionId}}</h5>
+                                            </td>
+                                        </ng-container>
+        
+                                        <ng-container matColumnDef="sourcePlatform">
+                                            <th mat-header-cell *matHeaderCellDef> Source Platform</th>
+                                            <td mat-cell *matCellDef="let element">
+                                                {{element.sourcePlatform}}
+                                            </td>
+                                        </ng-container>
+        
+        
+                                        <ng-container matColumnDef="amount">
+                                            <th mat-header-cell *matHeaderCellDef> Amount </th>
+                                            <td mat-cell *matCellDef="let element">
+                                                {{element.amount}}
+                                            </td>
+                                        </ng-container>
+        
+                                      
+        
+                                        <ng-container matColumnDef="status">
+                                            <th mat-header-cell *matHeaderCellDef class="text-end"> Bundle Status </th>
+                                            <td mat-cell *matCellDef="let element" class="text-end">
+                                                <div [ngClass]="{'badge-light-danger': element.status == 'Failure', 'badge-light-success': element.status == 'Pending', }"
+                                                    class="badge">
+                                                    {{element.status}}
+                                                </div>
+                                            </td>
+                                        </ng-container>
+        
+                                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                                    </table>
+        
+                                    <mat-paginator [pageSizeOptions]="[10, 25, 35, 100]"
+                                        aria-label="Select page of users"></mat-paginator>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="add-cards">
+                        <div class="heading">
+                            <h2>Your Cards</h2>
+                        </div>
+                        <div class="master-card" >
+                            <div class="master-card-details position-relative" *ngIf="savedDataForm">
+                                <h2 class="card-no">{{ formatCardNumber(savedDataForm.cardNumber) }}</h2>
+                                <div class="card-footer d-flex justify-content-between">
+                                    <div class="holder-name">
+                                        <p>Card Holder name </p>
+                                        <h6>Goutham K</h6>
+                                    </div>
+                                    <div class="holder-name">
+                                        <p>Expiry date</p>
+                                        <h6>{{savedDataForm.expiryMonth}}/{{savedDataForm.expiryYear}}</h6>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="add-btn">
+                                <button (click)="addCard()" mat-button><i class="bi bi-plus"></i> Add Card Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            
+            
+        </div>
+    </div>
+   
+
+</div>

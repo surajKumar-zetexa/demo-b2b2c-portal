@@ -1,0 +1,177 @@
+.sign-up-wrapper{
+    background-image: url('../../assets/img/sign-up-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    header{
+        padding: 20px 0;
+        .img{
+            img{
+                width: 150px;
+            }
+        }
+    }
+
+    .sign-up-section{
+        .sign-up-left{
+            .img{
+                margin-bottom: 50px;
+                img{
+                    width: 100%;
+                }
+            }
+            .text{
+                h6{
+                    color: #FFF;
+                    text-align: center;
+                    font-family: Poppins;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 600;
+                    padding: 0;
+                    margin: 0 0 10px;
+                    line-height: 30px; /* 125% */
+                }
+
+                p{
+                    text-align: center;
+                    font-family: Poppins;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    padding: 0;
+                    margin: 10px 0 0;
+                }
+            }
+        }
+    }
+
+}
+
+
+.form-wrapper{
+    .form-heading{
+        margin-bottom: 30px;
+        h4{
+            color: #7F56D9;
+            font-family: Poppins;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 38px; 
+            padding: 0;
+            margin: 0 0 ;
+        }
+        p{
+            color: #C3C6D5;
+            font-family: Poppins;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px; 
+            padding: 0;
+            margin: 0;
+            text-align: start;
+        }
+    }
+
+    .sign-up-btn{
+        button{
+            border-radius: 5px;
+            background: #009B82;
+            width: 100%;
+            color: #FFF;
+            font-family: Poppins;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 14px; 
+            height: auto;
+            padding: 7px;
+        }
+        h6{
+            color: #A6ABB6;
+            font-family: Inter;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 20px; 
+            margin: 8px 0;
+            padding: 0;
+            text-align: center;
+        }
+        .login-icons{
+            text-align: center;
+            .icons{
+                margin: 5px 10px ;
+                text-align: center;
+                img{
+                    width: 32px;
+                    height: 32px;
+                }
+                &.google-icon{
+                    background-color: #26252a;
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50px;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 6px;
+                    img{
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+
+    }
+    .login-account{
+        text-align: center;
+        p{
+            color: #A6ABB6;
+            font-family: Poppins;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px; 
+            padding: 0;
+            margin: 8px 0 0 0;
+            span{
+                color: #7F56D9;
+                margin-left: 3px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.otp-text{
+    p{
+        color: #A6ABB6;
+        font-family: Poppins;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px;
+        margin: 30px 0 30px;
+        span{
+            color: #7F56D9;
+            font-size: 13px;
+        }
+    }
+}
+
+span.resend {
+    opacity: .5;
+    cursor: default;
+    margin-left: .5vw;
+}
+
+span.active {
+    opacity: 10;
+    margin-left: .0;
+    cursor: pointer;
+}

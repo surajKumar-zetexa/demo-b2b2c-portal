@@ -1,0 +1,51 @@
+.badge{
+    .reject-menu{
+        display: none;
+    }
+}
+
+.dialog-container{
+    padding-bottom: 20px !important;
+    .eKYC-dialog-header{
+        padding: 30px !important;
+        background-color: #3c236f;
+        h3{
+            font-size: 30px;
+            font-weight: 600;
+            letter-spacing: 2px !important;
+        }
+        p{
+            font-size: 15px;
+            font-weight: 400;
+            padding: 10px 0;
+        }
+        h6{
+            font-size: 15px;
+            font-weight: 400;
+        }
+    }
+    .form-wrapper{
+        .ekyc-address-wraper{
+            ul{
+                li{
+                    &.after{
+                        &::after{
+                            display: none;
+                        }
+                    }
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        border: 0.1px solid;
+                        border-color: #575866;
+                        height: 47px;
+                        top: 41px;
+                        left: 18px;
+                        z-index: 9;
+                        border-style: dashed;
+                    }
+                }
+            }
+        }
+    }
+}

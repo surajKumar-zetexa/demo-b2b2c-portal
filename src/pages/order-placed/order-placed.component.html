@@ -1,0 +1,106 @@
+<div class="zet-db">
+
+    <div class="zet-toolbar pt-5 pb-3 py-lg-6">
+        <div class="container container-xxl">
+            <div class="zet-toolbar-wrapper d-flex justify-content-between align-items-center">
+                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+                    <h5 class="mb-0 fw-medium fs-4">Order Summary</h5>
+                </div>
+            </div>
+            
+
+
+        </div>
+    </div>
+
+    <div class="zet-content" >
+        <div class="app-container container-xxl" >
+            <div class="row justify-content-between">
+                <div class="col-md-11">
+                   <div class="order-summary-wrapper order-placed-wrapper">
+                        <div class="order-summary-card" *ngFor="let obj of orderList">
+                            <div class="d-flex ">
+                                <div class="country-flag">
+                                    <img src="assets/img/qrcode.png" alt="">
+                                </div>
+                                <div class="order-summary-card-body">
+                                    <div class="header d-flex justify-content-between">
+                                        <div class="header-left">
+                                            <h1>Incredible India</h1>
+                                            <ul class="d-flex mt-3 mb-3">
+                                                <li>
+                                                    <i class="bi bi-reception-4"></i>
+                                                    1 GB
+                                                </li>
+
+                                                <li>
+                                                    <i class="bi bi-chat-left-dots"></i>
+                                                    50 sms
+                                                </li>
+
+                                                <li>
+                                                    <i class="bi bi-telephone"></i>
+                                                    1000 mins
+                                                </li>
+
+                                                <li>
+                                                    <i class="bi bi-calendar2-minus"></i>
+                                                    7 Days
+                                                </li>
+
+
+                                            </ul>
+                                        </div>
+                                       
+                                    </div>
+                                   <div class="order-details">
+                                    <table>
+                                       <tr>
+                                        <th>User Name</th>
+                                        <th>Mail</th>
+                                        <th>Phone number</th>
+                                        <th>Country</th>
+                                        <th>KYC</th>
+                                        <th>Sim Type</th>
+                                        <th>Amount Paid</th>
+                                       </tr>
+                                       <tr>
+                                        <td>
+                                           <div class="d-flex">
+                                            <div class="icon">
+                                                <img src="assets/img/rajesh.png" alt="">
+                                            </div>
+                                           <p> Rajesh
+                                            <span> ID: 876364</span></p>
+                                           </div>
+                                        </td>
+                                        <td>rajesh@gmail.com</td>
+                                        <td>7083457845</td>
+                                        <td>USA</td>
+                                        <td> <i class="bi bi-patch-check-fill"></i> Verified</td>
+                                        <td>eSIM</td>
+                                        <td>$ 33 USD</td>
+
+                                       </tr>
+                                    </table>
+                                   </div>
+
+                                </div>
+                            </div>
+                            <div class="order-summary-card-footer">
+                                <div class="card-footer-btns d-flex justify-content-between">
+                                    <h6>Transaction Id: xxxxxxxxxxxxxxxx</h6>
+                                    <button (click)="shareEsim()" mat-button class="bg_color">Share eSIM</button>                                   
+                                </div>
+                            </div>
+                        </div>
+                   </div>
+
+                </div>
+               
+            </div>
+        </div>
+    </div>
+   
+
+</div>

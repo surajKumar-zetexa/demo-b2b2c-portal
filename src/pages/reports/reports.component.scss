@@ -1,0 +1,55 @@
+
+#pagewrapper {
+    .todos-section-wrapper {
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: #fff;
+      }
+  
+      .list {
+        min-height: 200px;
+        padding: 10px;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+  
+        .todo-item {
+          padding: 10px 15px;
+          border: 1px solid #ced4da;
+          border-radius: 5px;
+          cursor: all-scroll;
+          user-select: none;
+  
+          &:hover {
+            background-color: #dee2e6;
+          }
+  
+          &.cdk-drag-preview {
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+          }
+  
+          &.cdk-drag-placeholder {
+            background-color: #adb5bd;
+            border: 1px dashed #6c757d;
+          }
+  
+          &.cdk-drag-animating {
+            transition: transform 0.2s ease;
+          }
+        }
+  
+        &.cdk-drop-list-dragging .todo-item:not(.cdk-drag-placeholder) {
+          transition: transform 0.2s ease;
+        }
+      }
+    }
+  }

@@ -1,0 +1,107 @@
+<div class="zet-db buy-sim-page">
+
+    <div class="zet-toolbar pt-5 pb-3 py-lg-6">
+        <div class="container container-xxl">
+            <div class="zet-toolbar-wrapper d-flex justify-content-between align-items-center">
+                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+                    <h5 class="mb-0 fw-medium fs-4">Buy Sims</h5>
+                </div>
+
+
+                <div class="d-flex align-items-center gap-2 gap-lg-3">
+
+                    <!-- <div class="zet-toolbar-localsim-tabs me-5">
+                        <ul>
+                            <li  (click)="localeSim()"  [class.active]="showLocal">Local eSIM</li>
+                            <li  (click)="regionalEsim()"  [class.active]="showRegional">Regional eSIM</li>
+                        </ul>
+                        
+                    </div>  -->
+
+                    <div class="page-buttons d-flex gap-3">
+                        <button (click)="tabChange('Country')" [class.active]="tabVal == 'Country'" mat-button>
+                            Local eSIM</button>
+                        <button (click)="tabChange('Region')" [class.active]="tabVal == 'Region'" mat-button>
+                            Regional eSIM</button>
+                    </div>
+
+                    <div class="search-form">
+                        <div class="form-group has-search">
+                            <span class="form-control-feedback"><i class="bi bi-search"></i></span>
+                            <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchTerm"
+                                (keyup)="filterItems()">
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <div class="zet-content">
+        <div class="app-container container-xxl">
+            <div class="card card-buy-sim mt-2">
+                <div class="zet-sims-wrapper" *ngIf="tabVal == 'Country'">
+                    <div class="row">
+                        <div class="col-md-4" *ngFor="let country of filteredCountries">
+                            <div class="zet-sims-wrapper-card" (click)="buySimDetailed(country)">
+                                <div class="arrow-btn">
+                                    <i class="bi bi-arrow-right"></i>
+                                </div>
+                                <div class="zet-sims-card-content d-flex">
+                                    <div class="country-flag">
+                                        <img src="{{'data:image/PNG;base64,'+country.region_icon}}" alt="">
+                                    </div>
+                                    <div class="country-name middle">
+                                        <h3>{{country?.region_name}}</h3>
+                                        <p>Plans starts from <span>{{country.min_plan_price | number : '1.2-2'}}
+                                                {{country.currency}}</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <mat-paginator #paginator class="demo-paginator demo-paginator-size" (page)="handlePageEvent($event)"
+                            [length]="pageLength" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+                            [pageIndex]="pageIndex" aria-label="Select page">
+                        </mat-paginator>
+
+                    
+                    </div>
+
+                </div>
+
+                <div class="zet-sims-wrapper" *ngIf="tabVal == 'Region'">
+                    <div class="row">
+                        <div class="col-md-4" *ngFor="let region of filteredCountries">
+                            <div class="zet-sims-wrapper-card">
+                                <div class="arrow-btn">
+                                    <i class="bi bi-arrow-right"></i>
+                                </div>
+                                <div class="zet-sims-card-content d-flex">
+                                    <div class="country-flag">
+                                        <img src="{{'data:image/PNG;base64,'+region.region_icon}}" alt="">
+                                    </div>
+                                    <div class="country-name middle">
+                                        <h3>{{region.region_name}}</h3>
+                                        <p>Plans starts from <span>{{region.min_plan_price | number : '1.2-2'}}
+                                                {{region.currency}}</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

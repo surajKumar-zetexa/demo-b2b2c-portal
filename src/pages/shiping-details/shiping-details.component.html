@@ -1,0 +1,82 @@
+<div class="zet-db">
+
+    <div class="zet-toolbar pt-5 pb-3 py-lg-6">
+        <div class="container container-xxl">
+            <div class="zet-toolbar-wrapper d-flex justify-content-between align-items-center">
+                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+                    <h5 class="mb-0 fw-medium fs-4">Select Address</h5>
+                </div>
+            </div>
+            
+
+
+        </div>
+    </div>
+
+    <div class="zet-content" >
+        <div class="app-container container-xxl" >
+            <div class="row justify-content-between">
+                <div class="col-md-7">
+                    <div class="shipping-address-warper" *ngFor="let obj of adressList">
+                       <div class="d-flex justify-content-between">
+                        <div class="address-details">
+                            <h6>Goutham k</h6>
+                            <p>20, Inorbit Mall Rd, Vittal Rao Nagar, Madhapur, Hyderabad, Telangana 500081</p>
+                            <h6>gouthamk@gmail.com</h6>
+                        </div>
+                        <div class="edit-btns d-flex">
+                            <button mat-button class="edit-btn" (click)="addAddress()" ><i class="bi bi-pencil-square"></i></button>
+                            <button mat-button class="delete-btn" (click)="deleteAddress()"><i class="bi bi-trash3"></i></button>
+                        </div>
+                       </div>
+                    </div>
+
+                    <div class="add-adress-btns d-flex justify-content-between">
+                        <button (click)="addAddress()" mat-button>Add new address</button>
+                        <button (click)="orderSummery()"  mat-button class="button-bg">Select & Proceed</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="billing-address-wraper">
+                        <ul>
+                            <li class="d-flex align-items-center ">
+                                <div class="number-icon active d-flex align-items-center">
+                                    <h4>1</h4>
+                                </div>
+                                <div class="address-billing">
+                                    <h3>Billing Address <button>change</button></h3>
+                                    <p>You have 4 saved address</p>
+                                </div>
+                            </li>
+
+
+                            <li class="d-flex align-items-center">
+                                <div class="number-icon d-flex align-items-center">
+                                    <h4>2</h4>
+                                </div>
+                                <div class="address-billing">
+                                    <h3>Order Summary</h3>
+                                    <p>46,Madhapur, Madhapur, Hyderabad</p>
+                                </div>
+                            </li>
+
+
+
+                            <li class="d-flex align-items-center">
+                                <div class="number-icon d-flex align-items-center">
+                                    <h4>3</h4>
+                                </div>
+                                <div class="address-billing">
+                                    <h3>Payment</h3>
+                                    
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+</div>

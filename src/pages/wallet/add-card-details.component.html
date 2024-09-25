@@ -1,0 +1,56 @@
+<div class="dialog-container">
+    <div class="dialog-header text-center text-white ">
+        <h3 class="mb-0">Add Credit/Debit Card Details</h3>
+        <button (click)="close()" class="close"><i class="bi bi-x-lg"></i></button>
+    </div>
+
+    <form  [formGroup]="addCardForm">
+        <div class="form-wrapper">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="input-card">
+                        <label>Card Number</label>
+                        <mat-form-field appearance="fill">
+                            <input matInput placeholder="Enter Card Number" formControlName="cardNumber">
+                        </mat-form-field>
+                    </div>
+                </div>
+    
+                <div class="col-md-6">
+                    <div class="input-card">
+                        <label>Month</label>
+                        <mat-form-field appearance="fill">
+                            <input matInput placeholder="Enter Month" formControlName="expiryMonth">
+                        </mat-form-field>
+                    </div>
+                </div>
+    
+                <div class="col-md-6">
+                    <div class="input-card">
+                        <label>Year</label>
+                        <mat-form-field appearance="fill">
+                            <input matInput placeholder="Enter Year" formControlName="expiryYear">
+                        </mat-form-field>
+                    </div>
+                </div>
+    
+               
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="dialog-footer">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <button mat-button (click)="addDetails()">Add Card Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </form>
+  
+</div>

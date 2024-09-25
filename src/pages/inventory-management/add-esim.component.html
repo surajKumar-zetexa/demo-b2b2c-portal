@@ -1,0 +1,72 @@
+<div class="dialog-container">
+    <div class="dialog-header text-center text-white ">
+        <h3 class="mb-0">Add eSIM</h3>
+        <button (click)="close()" class="close"><i class="bi bi-x-lg"></i></button>
+    </div>
+
+    <div class="dialog-body">
+       <div class="add-esim-cards">
+        <div class="esim-card" *ngFor="let obj of addeSim">
+            <div class="esim-card-header d-flex justify-content-between">
+                <h1>Change</h1>
+                <div class="img">
+                    <img src="assets/img/verizon.png" alt="">
+                </div>
+
+            </div>
+            <div class="esim-card-body">
+                <ul class="d-flex justify-content-between">
+                    <li>
+                        <h6>PLAN DETAILS</h6>
+                        <div class="plane-details d-flex align-items-center">
+                            <div class="icon">
+                                <i class="bi bi-wifi"></i>
+                            </div>
+                            <p>1 GB</p>
+                        </div>
+                        <div class="plane-details d-flex align-items-center">
+                            <div class="icon">
+                                <i class="bi bi-arrow-down-up"></i>
+                            </div>
+                            <p>Data Only</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <h6>VALIDITY</h6>
+                        
+                        <div class="plane-details d-flex align-items-center">
+                            <div class="icon">
+                                <i class="bi bi-calendar"></i>
+                            </div>
+                            <p>7 Days </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <h6>ACTUAL PRICE</h6>
+                        
+                        <div class="plane-details d-flex align-items-center">
+                           <p>$4.50 </p>
+                        </div>
+                    </li>
+                    <li>
+                        <h6>DISCOUNT PRICE</h6>
+                        
+                        <div class="plane-details d-flex align-items-center">
+                           <p>$3.50</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="add-btn">
+                            <button mat-button>Add</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+       </div>
+    </div>
+   
+
+</div>

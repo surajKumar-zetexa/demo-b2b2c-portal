@@ -1,0 +1,224 @@
+<div class="dialog-container">
+    <div >
+         <div class="dialog-header eKYC-dialog-header text-white ">
+            <div class="d-flex">
+                <div>
+                        <h3 class="mb-0">KYC Details</h3>
+                    <p>We believe in giving back. Avail exciting added discount of
+                    upto 10% with an activated business account.</p>
+                    <h6>We ensure that every step you make is eventually beneficial.</h6>
+                    <button (click)="close()" class="close"><i class="bi bi-x-lg"></i></button>
+                </div>
+                <div class="img">
+                    <img src="assets/img/offers.png" alt="">
+                </div>
+            </div>
+         </div>
+
+         <div class="dialog-header text-white ">
+            
+                <h3 class="mb-0">About Your Business</h3>
+                <p><span>Tell us a few details about your Business.</span></p>
+                            
+         </div>
+
+ 
+ 
+         <div class="form-wrapper">
+             <div class="row">
+                 <div class="col-md-4">
+                    <div class="billing-address-wraper ekyc-address-wraper">
+                        <ul>
+                            <li class="d-flex align-items-center ">
+                                <div class="number-icon active d-flex align-items-center">
+                                    <h4>1</h4>
+                                </div>
+                                <div class="address-billing">
+                                    <h3>Basic Info</h3>
+                                </div>
+                            </li>
+
+
+                            <li class="d-flex align-items-center">
+                                <div class="number-icon d-flex align-items-center">
+                                    <h4>2</h4>
+                                </div>
+                                <div class="address-billing">
+                                    <h3>Business details</h3>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                    
+                 </div>
+                 <div class="col-md-8">
+                    <div class="form-scroll">
+                        <div *ngIf="showBasicDetails">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="input-card">
+                                        <label>Country</label>
+                                        <mat-form-field appearance="fill">
+                                            <mat-select placeholder="Select" >
+                                                <mat-option value="Indian"> Indian</mat-option>
+                                                <mat-option value="NRI" >NRI</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                
+                                <div class="col-md-6">
+                                    <div class="input-card">
+                                        <label>Business Type</label>
+                                        <mat-form-field appearance="fill">
+                                            <mat-select placeholder="Select" >
+                                                <mat-option value="Indian"> Indian</mat-option>
+                                                <mat-option value="NRI" >NRI</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                
+                                <div class="col-md-6">
+                                    <div class="input-card">
+                                        <label>Tax Number</label>
+                                        <mat-form-field appearance="fill">
+                                            <input matInput placeholder="Enter mail">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                
+                                <div class="col-md-6">
+                                    <div class="input-card">
+                                        <label>Currency</label>
+                                        <mat-form-field appearance="fill">
+                                            <mat-select placeholder="Select" >
+                                                <mat-option value="Indian"> Indian</mat-option>
+                                                <mat-option value="NRI" >NRI</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                
+                                <div class="col-md-12">
+                                    <div class="input-card">
+                                        <label>Company Identification Number (CIN)</label>
+                                        <mat-form-field appearance="fill">
+                                            <input matInput placeholder="Enter CIN number here">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+    
+                                <div class="dialog-footer">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="text-center d-flex justify-content-between">
+                                            <button class="back_btn" mat-button (click)="back()" >Back</button>
+                                                <button mat-button (click)="next()" >Next</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                            </div>
+                        </div>
+    
+                        <div *ngIf="showBusinessDetails">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="input-card">
+                                        <label>Business email ID</label>
+                                        <mat-form-field appearance="fill">
+                                            <input matInput placeholder="Enter Your Business email ID">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                
+                                <div class="col-md-6">
+                                    <div class="input-card">
+                                        <label>Phone Number Type</label>
+                                        <mat-form-field appearance="fill">
+                                            <input matInput placeholder="Enter Your Phone Number">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                
+                                <div class="col-md-6">
+                                    <div class="input-card">
+                                        <label>Alternate Phone Number Type</label>
+                                        <mat-form-field appearance="fill">
+                                            <input matInput placeholder="Enter Your Alternate Phone Number">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+    
+                                <div class="col-md-6">
+                                    <div class="input-card">
+                                        <label>Company Name</label>
+                                        <mat-form-field appearance="fill">
+                                            <input matInput placeholder="Enter Your Company Name">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                
+                                <div class="col-md-12">
+                                    <div class="input-card">
+                                        <label>Company Website</label>
+                                        <mat-form-field appearance="fill">
+                                            <input matInput placeholder="Enter Your Company">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+    
+                                <div class="col-md-12">
+                                    <div class="input-card">
+                                        <label>Attachment</label>
+                                       <div class="attach-file-border">
+                                        
+                                        <div class="uploade-button uploade_filed uploade_filed_1">
+                                            <p>Upload<i class="bi bi-upload"></i></p>
+                                            <input type="file" >
+                                           </div>
+                                       </div>
+                                    </div>
+                                </div>
+                
+                               
+        
+                                <div class="dialog-footer">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="text-center d-flex justify-content-between">
+                                               <button class="back_btn" mat-button >Back</button>
+                                                <button mat-button >Next</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                            </div>
+                        </div>
+                    </div>
+                    
+                 </div>
+                 
+             </div>
+         </div>
+        
+    </div>
+ 
+ 
+     <div >
+         <!-- <div class="dialog-header text-center text-white ">
+             <button  class="close back-btn"><i class="bi bi-arrow-left-short"></i></button>
+             <h3 class="mb-0">Fill out fields below for eKYC</h3>
+             <button  class="close skip-btn">Skip <i class="bi bi-skip-end-fill"></i></button>
+         </div> -->
+     
+     
+        
+     </div>
+ 
+ 
+ </div>

@@ -1,0 +1,9 @@
+.filter-btns{
+    button{
+        &.active{
+            border: 1px solid #9564F8;
+            box-shadow: 0px -1px 16.5px 0px #7F56D9A6;
+
+        }
+    }
+}

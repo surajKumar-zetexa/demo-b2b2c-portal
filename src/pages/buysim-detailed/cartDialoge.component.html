@@ -1,0 +1,120 @@
+<div class="modal-container d-flex flex-column">
+
+    <div class="modal-header d-flex align-items-center justify-content-between">
+        <h3 class="fw-medium">Cart</h3>
+
+        <button (click)="close()" class="close" mat-button>
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+
+    <div class="modal-wrapper mb-auto custom-scroll-bar">
+        <div class="dilogue-body">
+            <div class="modal-wrapper-body">
+                <div class="cart-items ">
+                    <div class="cart-single-item d-flex justify-content-between">
+                        <div class="cart-image">
+                            <img src="assets/img/cart-us.png" alt="">
+                        </div>
+                        <div class="cart-info">
+                            <ul class="nav text-uppercase d-block">
+                                <li class="d-flex">
+                                    <div class="icon">
+                                        <img src="assets/img/coverage.png" alt="coverage">
+                                    </div>
+                                    COVERAGE
+                                </li>
+                                <li class="d-flex">
+                                    <div class="icon">
+                                        <img src="assets/img/network.png" alt="network">
+                                    </div>
+                                    NETWORK
+                                </li>
+                                <li class="d-flex">
+                                    <div class="icon">
+                                        <img src="assets/img/data.png" alt="Data">
+                                    </div>
+                                    DATA
+                                </li>
+                                <li class="d-flex">
+                                    <div class="icon">
+                                        <img src="assets/img/validity.png" alt="">
+                                    </div>
+                                    VALIDITY
+                                </li>
+                                <li class="d-flex">
+                                    <div class="icon">
+                                        <img src="assets/img/price.png" alt="">
+                                    </div>
+                                    PRICE
+                                </li>
+                            </ul>
+    
+                        </div>
+    
+                        <div class="cart-info cart-data text-end">
+                            <ul class="nav d-block">
+                                <li>
+                                    United States
+                                </li>
+    
+                                <li class="d-flex align-items-center justify-content-end">
+                                    T-Mobile <span class="badge d-flex align-items-center justify-content-center">5G</span>
+                                </li>
+    
+                                <li>
+                                    3 GB
+                                </li>
+    
+                                <li>
+                                    30 Days
+                                </li>
+    
+                                <li>
+                                    $11 USD
+                                </li>
+    
+                            </ul>
+                        </div>
+    
+                    </div>
+    
+                   
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+
+
+    <div class="cart-footer">
+        <div class="price-card d-flex justify-content-between">
+            <h2>Total</h2>
+            <h2>$11 USD</h2>
+        </div>
+
+        <div class="terms">
+
+            <div class="check-box">
+                <mat-checkbox [(ngModel)]="agree">
+                    Before you finalize this purchase, ensure that your
+                    device is capable of using eSIM and is unlocked
+                    for any network. <a 
+                        class="text-underline fw-medium">Check
+                        Compatible Device List </a>
+                </mat-checkbox>
+                <p *ngIf="errorFlag" class="error-msg">Please Check Compatible Device </p>
+            </div>
+
+
+        </div>
+
+        <div class="cart-buttons d-flex justify-content-between">
+            <button (click)="gotoCart()" mat-button class="checkout-btn">Checkout</button>
+            <button mat-button>Continue Shopping</button>
+        </div>
+
+    </div>
+
+</div>

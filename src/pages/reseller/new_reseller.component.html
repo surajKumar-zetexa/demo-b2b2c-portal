@@ -1,0 +1,365 @@
+<div class="dialog-container">
+    <div>
+        <div class="dialog-header eKYC-dialog-header text-white ">
+            <!-- <div class="d-flex"> -->
+                <div>
+                    <h3 class="mb-0"> ADD RESELLERS </h3>
+                    <p>To add sub-resellers in the Zetexa portal, resellers must ensure their sub-resellers verify their identity
+                        by submitting ID proofs. Once verifed, sub-reseller accounts can be set up quickly and efciently.
+                    </p>
+                    <button (click)="close()" class="close"><i class="bi bi-x-lg"></i></button>
+                </div>
+                <!-- <div class="img">
+                    <img src="assets/img/offers.png" alt="">
+                </div> -->
+            <!-- </div> -->
+        </div>
+
+        <!-- <div class="dialog-header text-white ">
+
+            <h3 class="mb-0">About Your Business</h3>
+            <p><span>Tell us a few details about your Business.</span></p>
+
+        </div> -->
+
+
+
+        <div class="form-wrapper">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="billing-address-wraper ekyc-address-wraper">
+                        <ul>
+                            <li class="d-flex align-items-center ">
+                                <div class="number-icon active d-flex align-items-center">
+                                    <h4>1</h4>
+                                </div>
+                                <div class="address-billing">
+                                    <h3>Basic Info</h3>
+                                </div>
+                            </li>
+
+
+                            <li class="d-flex align-items-center ">
+                                <div class="number-icon d-flex align-items-center">
+                                    <h4>2</h4>
+                                </div>
+                                <div class="address-billing">
+                                    <h3>Business details</h3>
+                                </div>
+                            </li>
+                            <li class="d-flex align-items-center after">
+                                <div class="number-icon d-flex align-items-center">
+                                    <h4>3</h4>
+                                </div>
+                                <div class="address-billing">
+                                    <h3>KYC Details</h3>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col-md-8">
+                    <div class="form-scroll">
+                        <div *ngIf="showBasicDetails">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="input-card">
+                                        <label>First Name</label>
+                                        <mat-form-field appearance="fill">
+                                            <input matInput placeholder="First Name">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-card">
+                                        <label>Last Name</label>
+                                        <mat-form-field appearance="fill">
+                                            <input matInput placeholder="Last Name">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-card">
+                                        <label>Email id</label>
+                                        <mat-form-field appearance="fill">
+                                            <input matInput placeholder="Email id">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-card">
+                                        <label>Phone Number</label>
+                                        <mat-form-field appearance="fill">
+                                            <input matInput placeholder="Phone Number">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="input-card input-radio-card">
+                                        <label>Gender</label>
+                                        <mat-radio-group aria-label="Select an option">
+                                            <mat-radio-button class="border-right" value="1">Male</mat-radio-button>
+                                            <mat-radio-button value="2">Female</mat-radio-button>
+                                          </mat-radio-group>
+                                    </div>     
+                                </div>
+
+                                <!-- <div class="col-md-6">
+                                    <div class="input-card">
+                                        <label>Country</label>
+                                        <mat-form-field appearance="fill">
+                                            <mat-select placeholder="Select">
+                                                <mat-option value="Indian"> Indian</mat-option>
+                                                <mat-option value="NRI">NRI</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="input-card">
+                                        <label>Business Type</label>
+                                        <mat-form-field appearance="fill">
+                                            <mat-select placeholder="Select">
+                                                <mat-option value="Indian"> Indian</mat-option>
+                                                <mat-option value="NRI">NRI</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="input-card">
+                                        <label>Tax Number</label>
+                                        <mat-form-field appearance="fill">
+                                            <input matInput placeholder="Enter mail">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="input-card">
+                                        <label>Currency</label>
+                                        <mat-form-field appearance="fill">
+                                            <mat-select placeholder="Select">
+                                                <mat-option value="Indian"> Indian</mat-option>
+                                                <mat-option value="NRI">NRI</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="input-card">
+                                        <label>Company Identification Number (CIN)</label>
+                                        <mat-form-field appearance="fill">
+                                            <input matInput placeholder="Enter CIN number here">
+                                        </mat-form-field>
+                                    </div>
+                                </div> -->
+
+                                <div class="dialog-footer">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="text-center d-flex justify-content-between">
+                                                <button class="back_btn" mat-button (click)="back()">Back</button>
+                                                <button mat-button (click)="next()">Next</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div *ngIf="showBusinessDetails">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="input-card">
+                                        <label>Company Registered Name</label>
+                                        <mat-form-field appearance="fill">
+                                            <input matInput placeholder="Company Registered Name">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="input-card">
+                                        <label>Company Trading Name</label>
+                                        <mat-form-field appearance="fill">
+                                            <input matInput placeholder="Company Trading Name">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="input-card">
+                                        <label>Address Line 1</label>
+                                        <mat-form-field appearance="fill">
+                                            <input matInput placeholder="Address Line 1">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="input-card">
+                                        <label>Address Line 2</label>
+                                        <mat-form-field appearance="fill">
+                                            <input matInput placeholder="Address Line 2">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="input-card">
+                                        <label>Incorporation Country</label>
+                                        <mat-form-field appearance="fill">
+                                            <mat-select placeholder="Select">
+                                                <mat-option value="Indian"> Indian</mat-option>
+                                                <mat-option value="NRI">NRI</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="input-card">
+                                        <label>Proft Slab</label>
+                                        <mat-form-field appearance="fill">
+                                            <mat-select placeholder="Select">
+                                                <mat-option value="Indian"> Indian</mat-option>
+                                                <mat-option value="NRI">NRI</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="dialog-footer">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="text-center d-flex justify-content-between">
+                                                <button class="back_btn" mat-button (click)="back()">Back</button>
+                                                <button mat-button (click)="next()">Next</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div *ngIf="showKycDetails">
+                            <div class="row">
+                                <!-- <div class="col-md-6">
+                                    <div class="input-card">
+                                        <label>Business email ID</label>
+                                        <mat-form-field appearance="fill">
+                                            <input matInput placeholder="Enter Your Business email ID">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="input-card">
+                                        <label>Phone Number Type</label>
+                                        <mat-form-field appearance="fill">
+                                            <input matInput placeholder="Enter Your Phone Number">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="input-card">
+                                        <label>Alternate Phone Number Type</label>
+                                        <mat-form-field appearance="fill">
+                                            <input matInput placeholder="Enter Your Alternate Phone Number">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="input-card">
+                                        <label>Company Name</label>
+                                        <mat-form-field appearance="fill">
+                                            <input matInput placeholder="Enter Your Company Name">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="input-card">
+                                        <label>Company Website</label>
+                                        <mat-form-field appearance="fill">
+                                            <input matInput placeholder="Enter Your Company">
+                                        </mat-form-field>
+                                    </div>
+                                </div> -->
+
+                                <div class="col-md-12">
+                                    <div class="input-card">
+                                        <label>Attachment</label>
+                                        <div class="attach-file-border text-white ps-4" style="justify-content: space-between; align-items: center;">
+
+                                            <!-- <div class="uploade-button uploade_filed uploade_filed_1">
+                                                <p>Upload<i class="bi bi-upload"></i></p>
+                                                <input type="file" >
+                                            </div> -->
+                                            {{ fileName ? 'Selected file: ' + fileName : 'file name' }}
+                                            <div class="uploade-button uploade_filed uploade_filed_1">
+                                                <p>Upload <i class="bi bi-upload"></i></p>
+                                                <input type="file" (change)="onFileSelected($event)">
+                                              </div>
+                                              
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="input-card">
+                                        <label>Business Proof Type</label>
+                                        <mat-form-field appearance="fill">
+                                            <mat-select placeholder="Select">
+                                                <mat-option value="Indian"> Indian</mat-option>
+                                                <mat-option value="NRI">NRI</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                                <div class="dialog-footer">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="text-center d-flex justify-content-between">
+                                                <button class="back_btn" mat-button (click)="back()">Back</button>
+                                                <button mat-button>Next</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div>
+        <!-- <div class="dialog-header text-center text-white ">
+             <button  class="close back-btn"><i class="bi bi-arrow-left-short"></i></button>
+             <h3 class="mb-0">Fill out fields below for eKYC</h3>
+             <button  class="close skip-btn">Skip <i class="bi bi-skip-end-fill"></i></button>
+         </div> -->
+
+
+
+    </div>
+
+
+</div>

@@ -1,0 +1,149 @@
+
+<section class="sign-up-wrapper">
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="img">
+                        <img src="assets/img/logo.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="sign-up-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="row justify-content-between">
+                        <div class="col-md-5">
+
+                            <ngx-slick-carousel class="carousel" [config]="slideConfig">
+                                <div ngxSlickItem >
+                                    <div class="sign-up-left">
+                                        <div class="img">
+                                            <img src="assets/img/simg1.png" alt="">
+                                        </div>
+                                        <div class="text text-center text-white">
+                                            <h6>Experience the art of possibilities in connected tech with us. </h6>
+                                            <p>We just don't stop at data. We notch it up with Data, voice and SMS services to enable a wider audience for you.  We are just adequately right for every businesses that demands connectivity.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div ngxSlickItem >
+                                    <div class="sign-up-left">
+                                        <div class="img">
+                                            <img src="assets/img/simg2.png" alt="">
+                                        </div>
+                                        <div class="text text-center text-white">
+                                            <h6>Experience the art of possibilities in connected tech with us. </h6>
+                                            <p>We just don't stop at data. We notch it up with Data, voice and SMS services to enable a wider audience for you.  We are just adequately right for every businesses that demands connectivity.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                              </ngx-slick-carousel>
+
+                            
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="form-wrapper" *ngIf="!otpFlag">
+                                <form [formGroup]="agentLoginForm">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-heading">
+                                                <h4>Welcome to Zetexa</h4>
+                                                <p>Let us take you to a journey with endless possibilities.</p>
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="col-md-12">
+                                            <div class="input-card">
+                                                <label>Business Email ID</label>
+                                                <mat-form-field appearance="fill">
+                                                    <input matInput formControlName="email" placeholder="Enter here">
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                              <div class="input-card">
+                                            <label>Agent Type</label>
+                                            <mat-form-field appearance="fill">
+                                            <mat-select formControlName="agent_type" placeholder="Select" >
+                                                <mat-option value="Travel Agent"> Travel Agent</mat-option>
+                                                <mat-option value="Forex" >Forex</mat-option>
+                                                <mat-option value="Corporate"> Corporate</mat-option>
+                                                <mat-option value="Insurance" >Insurance</mat-option>
+                                                <mat-option value="None" >None</mat-option>
+                                            </mat-select>
+                                            </mat-form-field>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="input-card checkbox-card">
+                                                <mat-checkbox formControlName="agree" class="example-margin">I agree with 
+                                                    <span><a href="https://www.zetexa.com/terms-conditions">Terms and Conditions</a></span> and 
+                                                    <span><a href="https://www.zetexa.com/privacy-policy">Privacy Policy</a></span></mat-checkbox>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="sign-up-btn">
+                                                <button mat-button  >Sign In</button>   <!--(click)="login()"-->
+                                            </div>
+                                            <div class="login-account">
+                                                <p>Don't have an account?<span [routerLink]="'/sign-up'">SignUp</span></p>
+                                            </div>
+    
+                                        </div>
+                                     
+                                    </div>
+                                </form>
+                              
+                            </div>
+
+                            <div class="form-wrapper middle" *ngIf="otpFlag">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-heading">
+                                            <h4>OTP Verification</h4>
+                                            <p>Enter OTP sent to <span>{{agentLoginForm.value.email}}</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="input-card text-center mt-3 mb-5">
+                                            <!-- <ng-otp-input (onInputChange)="onOtpChange($event)" [config]="{length:6}" ></ng-otp-input> -->
+                                        </div>
+                                        <!-- <div class="otp-text">
+                                            <p>Didn't receive the code? 
+                                                 <span *ngIf="!showResendFlag" class="fw-medium">
+                                                <countdown (event)="handleEvent($event)"
+                                                    [config]="{ leftTime: 60 }" />
+                                            </span>
+                                            <span [ngClass]="{'active': showResendFlag}" (click)="login()"
+                                                class="fw-medium resend">Resend OTP</span></p>
+                                        </div> -->
+                                    </div>
+                        
+                                   
+                                    <div class="col-md-12">
+                                        <div class="sign-up-btn">
+                                            <!-- <button mat-button (click)="verifyOtp()" >Verify</button> -->
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </section>
+
+</section>

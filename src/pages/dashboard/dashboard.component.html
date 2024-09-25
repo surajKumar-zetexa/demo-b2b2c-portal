@@ -1,0 +1,181 @@
+<mat-drawer-container class="example-container">
+
+    <mat-drawer mode="side" opened>
+        <div class="sidebar">
+            <div class="sidebar-logo py-3 px-4 d-flex align-items-center mx-auto">
+                    <img src="assets/img/logo.svg" alt="">
+            </div>            
+            <div class="sidemenu overflow-hidden flex-column-fluid">
+                <div class="sidemenu-wrapper">
+
+                    <div class="user-card d-flex align-items-center">
+                        <div class="user-icon">
+                            <img src="../../assets/img/profile-img.png" alt="">
+                        </div>
+                        <div class="text">
+                            <h5>Goutham K</h5>
+                            <p>Verified <i class="bi bi-patch-check-fill"></i></p>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-links ">
+                        <nav class="zet-links">
+                            <ul class="zet-links-nav list-unstyled mb-0 p-0 fw-medium">
+                                <li [ngClass]="{'kyc-pending': !profileData?.agent?.ekyc_completed}"
+                                routerLink="/dashboard/home" routerLinkActive="active">
+                                    <a class="zet-links-link rounded d-flex align-items-center"
+                                     >
+                                        <span class="dashboard"></span>
+                                        Dashboard</a>
+                                </li>
+                                <li [ngClass]="{'kyc-pending': !profileData?.agent?.ekyc_completed}"
+                                 routerLink="/dashboard/buy-sims" routerLinkActive="active" >
+                                    <a class="zet-links-link rounded d-flex align-items-center"
+                                    >
+                                        <span class="buy-sims"></span>
+                                        Buy Sims</a>
+                                </li>
+                                <li [ngClass]="{'kyc-pending': !profileData?.agent?.ekyc_completed}" 
+                                routerLink="/dashboard/customer-management" routerLinkActive="active">
+                                    <a class="zet-links-link rounded d-flex align-items-center"
+                                    >
+                                        <span class="cm"></span>
+                                        Customer management</a>
+                                </li>
+                                <li  [ngClass]="{'kyc-pending': !profileData?.agent?.ekyc_completed}"
+                                 routerLink="/dashboard/orders" routerLinkActive="active">
+                                    <a class="zet-links-link rounded d-flex align-items-center"
+                                   >
+                                        <span class="orders"></span>
+                                        Orders</a>
+                                </li>
+                                <li  [ngClass]="{'kyc-pending': !profileData?.agent?.ekyc_completed}"
+                                 routerLink="/dashboard/inventory-management" routerLinkActive="active">
+                                    <a class="zet-links-link rounded d-flex align-items-center"
+                                   >
+                                        <span class="im"></span>
+                                        Inventory management</a>
+                                </li>
+                                <li  [ngClass]="{'kyc-pending': !profileData?.agent?.ekyc_completed}"
+                                 routerLink="/dashboard/wallet" routerLinkActive="active">
+                                    <a class="zet-links-link rounded d-flex align-items-center"
+                                   >
+                                        <span class="wallet"></span>
+                                        Wallet</a>
+                                </li>
+                                <li  [ngClass]="{'kyc-pending': !profileData?.agent?.ekyc_completed}">
+                                    <a class="zet-links-link rounded d-flex align-items-center"
+                                   >
+                                        <span class="code"></span>
+                                        Developer options / API</a>
+                                </li>
+                                <li  routerLink="/dashboard/reports" routerLinkActive="active"
+                                [ngClass]="{'kyc-pending': !profileData?.agent?.ekyc_completed}">
+                                    <a class="zet-links-link rounded d-flex align-items-center"
+                                   >
+                                        <span class="reports"></span>
+                                        Reports</a>
+                                </li>
+                                <li  routerLink="/dashboard/resellers" routerLinkActive="active"
+                                [ngClass]="{'kyc-pending': !profileData?.agent?.ekyc_completed}">
+                                    <a class="zet-links-link rounded d-flex align-items-center"
+                                   >
+                                    <img src="assets/img/icons/resell-3.png" alt="">
+                                    Resellers
+                                        <!-- <span class="resellers"></span> -->
+                                        </a>
+                                </li>
+
+                                <li routerLink="/dashboard/help-support" routerLinkActive="active"
+                                 [ngClass]="{'kyc-pending': !profileData?.agent?.ekyc_completed}">
+                                    <a class="zet-links-link rounded d-flex align-items-center"
+                                    >
+                                        <img src="assets/img/icons/zet-icon.svg" alt="Help & Support"> 
+                                        Help & Support</a>
+                                </li>
+                               
+                              
+                            </ul>
+                            <div class="more-offers position-relative" *ngIf="!profileData?.agent?.ekyc_completed">
+                                <div class="img position-absolute">
+                                    <img src="assets/img/offers.png" alt="">
+                                </div>
+                                <div class="offer-text text-center">
+                                    <h6>More offers
+                                        coming your way!
+                                    </h6>
+                                    <p>Avail 10% extra discount on your purchase by verifying your account now & get account manager assistance.</p>
+                                    <button (click)="openEkyc()" >Verify now</button>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-drawer>
+
+    <mat-drawer-content>
+
+        <div class="header">
+            <mat-toolbar>
+              
+                <span class="example-spacer"></span>
+
+                <div class="menu-buttons ms-auto text-white">
+                    <button mat-button class="fw-medium" (click)="assistDialog()"><img src="assets/img/icons/account-manager.svg" alt=""> Account Manager</button>
+                    <button mat-button class="fw-medium"  routerLink="/dashboard/wallet" ><img src="assets/img/icons/wallet.svg" alt=""> $ 450.66 USD</button>
+                </div>
+
+                <div class="menu-icon-buttons ms-4">
+                    <!-- <button mat-icon-button class="example-icon favorite-icon " aria-label="Example icon-button with heart icon">
+                        <span class="material-symbols-outlined">settings</span>
+                    </button> -->
+                   
+                   
+                    <button mat-icon-button class="example-icon favorite-icon notifications-button position-relative" aria-label="Example icon-button with heart icon">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <ul class="notifications-menu">
+                            <div class="heading">
+                                <h2>Notification</h2>
+                            </div>
+                            <li class="d-flex align-items-center" *ngFor="let obj of notifications">
+                                <div class="zetexa-logo">
+                                    <img src="assets/img/zetexa-icon.png" alt="">
+                                </div>
+                                <div class="message">
+                                    <h6>eSIMs have been distributed to all users.</h6>
+                                    <p>12th Aug 2023</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </button>                   
+
+                    <button mat-icon-button class="example-icon favorite-icon" (click)="openCart()"  aria-label="Example icon-button with heart icon">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                    </button>
+
+                    <button mat-icon-button class="example-icon favorite-icon" (click)="logout()"  aria-label="Example icon-button with heart icon">
+                        <span class="material-symbols-outlined">logout</span>
+                    </button>
+
+                    <button mat-icon-button class="example-icon favorite-icon" routerLink="/dashboard/profile" aria-label="Example icon-button with heart icon">
+                        <span class="material-symbols-outlined">person</span>
+                    </button>
+
+               
+                    
+                </div>
+    
+               
+                  
+              </mat-toolbar>
+        </div>
+        
+          
+          
+           <router-outlet></router-outlet>
+
+    </mat-drawer-content>
+
+</mat-drawer-container>

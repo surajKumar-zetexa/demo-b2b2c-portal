@@ -1,0 +1,360 @@
+<div class="zet-db">
+
+    <div class="zet-toolbar pt-5 pb-3 py-lg-6">
+        <div class="container container-xxl">
+            <div class="zet-toolbar-wrapper d-flex justify-content-between align-items-center">
+                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+                    <h5 class="mb-0 fw-medium fs-4"><span>Morning,</span> Goutham K</h5>
+                </div>
+                <div class="d-flex align-items-center gap-2 gap-lg-3">
+                   
+                    <div class="page-buttons filter-btns">
+                        <button mat-button>Today</button>
+                        <button mat-button>Week</button>
+                        <button mat-button class="active">Month</button>
+                        <button mat-button><i class="bi bi-calendar3"></i></button>
+                    </div>
+                </div>
+            </div>
+                       
+        </div>
+    </div>
+
+    <div class="zet-content" >
+        <div class="app-container container-xxl" >
+         
+            <div class="cumulative-sales-wrapper" >
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card inventery-week-report mt-3 mb-3">
+                                    <div class="inventery-week-header d-flex justify-content-between">
+                                        <div class="icon">
+                                            <img src="assets/img/shopping_bag.png" alt="">
+                                        </div>
+                                        <p><span><img src="assets/img/graph-up.png" alt="">30%</span>This week</p>
+                                    </div>
+                                    <div class="inventery-week-report-body">
+                                        <h6>eSIMs Inventory</h6>
+                                        <h1>1500</h1>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card inventery-week-report mt-3">
+                                    <div class="inventery-week-header d-flex justify-content-between">
+                                        <div class="icon">
+                                            <img src="assets/img/data_thresholding.png" alt="">
+                                        </div>
+                                        <p class="graph-down"><span><img src="assets/img/graph-down.png" alt="">-29%</span>This week</p>
+                                    </div>
+                                    <div class="inventery-week-report-body">
+                                        <h6>eSIMs Sold</h6>
+                                        <h1>4900</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card inventery-week-report mt-3">
+                                    <div class="inventery-week-header d-flex justify-content-between">
+                                        <div class="icon">
+                                            <img src="assets/img/shopping_bag.png" alt="">
+                                        </div>
+                                        <p class="graph-down"><span><img src="assets/img/graph-down.png" alt="">30%</span>This week</p>
+                                    </div>
+                                    <div class="inventery-week-report-body">
+                                        <h6>Total Sales</h6>
+                                        <h1>$ 24500</h1>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card inventery-week-report mt-3">
+                                    <div class="inventery-week-header d-flex justify-content-between">
+                                        <div class="icon">
+                                            <img src="assets/img/data_thresholding.png" alt="">
+                                        </div>
+                                        <p ><span><img src="assets/img/graph-up.png" alt="">-29%</span>This week</p>
+                                    </div>
+                                    <div class="inventery-week-report-body">
+                                        <h6>Cumulative Margins</h6>
+                                        <h1>$ 3675</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                   
+                    <div class="col-md-6">
+                        <div class="card cumulative-card mt-3">
+                            <div class="cumulative-card-header d-flex justify-content-between align-items-center">
+                                <h2>Number of Sims sold</h2>
+                                <!-- <div class="input-card input-card-width m-0">
+                                    <mat-form-field appearance="fill">
+                                        <mat-select placeholder="Month" >
+                                            <mat-option value="January">January</mat-option>
+                                            <mat-option value="February" >February</mat-option>
+                                            <mat-option value="March" >March</mat-option>
+                                          </mat-select>
+                                    </mat-form-field>
+                                </div> -->
+                            </div>
+
+                            
+
+                            <div class="liner-graph mt-4">
+                                <div class="liner-graph mt-4">
+                                    <canvasjs-chart [options]="chartOptions1" [styles]="{width: '95%', height:'280px'}" ></canvasjs-chart>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="card cumulative-card mt-5">
+                            <div class="cumulative-card-header d-flex justify-content-between align-items-center">
+                                <h2>Financial performance</h2>
+                                
+                            </div>
+
+                            <div class="liner-graph mt-4">
+                                <div class="liner-graph mt-4">
+                                    <canvasjs-chart [options]="chartOptions" [styles]="{width: '95%', height:'400px'}" ></canvasjs-chart>  
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card cumulative-card mt-5">
+                            <div class="cumulative-card-header d-flex justify-content-between align-items-center">
+                                <h2>Your recent Orders</h2>
+                                <div class="input-card m-0">
+                                    <button class="sub-menu-btn" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                                        <i class="bi bi-three-dots"></i>
+                                      </button>
+                                      <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>
+                                          <span>Redial</span>
+                                        </button>
+                                        <button mat-menu-item disabled>
+                                          <span>Check voice mail</span>
+                                        </button>
+                                        <button mat-menu-item>
+                                          <span>Disable alerts</span>
+                                        </button>
+                                      </mat-menu>
+                                      
+                                </div>
+                                
+                            </div>
+
+                            <div class="table_wrapper">
+                                <div class="table-responsive">
+        
+                                    <table mat-table [dataSource]="dataSource">
+        
+                                        <ng-container matColumnDef="id">
+                                            <th mat-header-cell *matHeaderCellDef> Order no</th>
+                                            <td mat-cell *matCellDef="let element">
+                                                {{element.id}}
+                                            </td>
+                                        </ng-container>
+        
+                                        <ng-container matColumnDef="name">
+                                            <th mat-header-cell *matHeaderCellDef> Name </th>
+                                            <td mat-cell *matCellDef="let element">
+                                                <div class="d-flex user-card align-items-center">
+                                                    <div *ngIf="element.img" class="user-img me-3">
+                                                        <img src="{{element.img}}" alt="">
+                                                    </div>
+                                                    <div *ngIf="!element.img"
+                                                        class="user-name fw-medium text-center d-flex align-items-center justify-content-center me-3">
+                                                        {{element.name.slice(0,1)}}
+                                                    </div>
+                                                    <h5 class="mb-0">{{element.name}}</h5>
+                                                </div>
+                                            </td>
+                                        </ng-container>
+        
+        
+                                        <ng-container matColumnDef="price">
+                                            <th mat-header-cell *matHeaderCellDef> price </th>
+                                            <td mat-cell *matCellDef="let element">
+                                                {{element.price}}
+                                            </td>
+                                        </ng-container>
+        
+                                        <ng-container matColumnDef="bundlename">
+                                            <th mat-header-cell *matHeaderCellDef> Bundle name </th>
+                                            <td mat-cell *matCellDef="let element">
+                                                {{element.bundlename}}
+                                            </td>
+                                        </ng-container>
+        
+                                        <ng-container matColumnDef="bundleStatus">
+                                            <th mat-header-cell *matHeaderCellDef> eKYC </th>
+                                            <td mat-cell *matCellDef="let element">
+        
+                                                <div  [ngClass]="{'badge-light-danger': element.bundleStatus == 'Pending', 'badge-light-success': element.bundleStatus == 'Success', }"
+                                                    class="badge" >                                           
+                                                    {{element.bundleStatus}}
+                                                </div>
+        
+                                               
+                                                
+                                            </td>
+                                            
+                                        </ng-container>
+                                       
+                                        
+        
+                                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                                    </table>
+        
+                                  
+                                </div>
+                            </div>
+                            
+
+                            
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-6">
+                        <div class="card cumulative-card mt-5">
+                            <div class="cumulative-card-header d-flex justify-content-between align-items-center">
+                                <h2>Quick Actions</h2>
+                                <div class="input-card m-0">
+                                    <button class="sub-menu-btn" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                                        <i class="bi bi-three-dots"></i>
+                                      </button>
+                                      <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>
+                                          <span>Redial</span>
+                                        </button>
+                                        <button mat-menu-item disabled>
+                                          <span>Check voice mail</span>
+                                        </button>
+                                        <button mat-menu-item>
+                                          <span>Disable alerts</span>
+                                        </button>
+                                      </mat-menu>
+                                      
+                                </div>
+                                
+                            </div>
+
+                            <div class="quick-actions mt-3">
+                                <ul>
+                                    <li class="d-flex justify-content-between align-items-center">
+                                        <div class="quick-actions-user-info">
+                                            <div class="d-flex">
+                                                <div class="img">
+                                                    <img src="assets/img/quick1.png" alt="">
+                                                </div>
+                                                <div class="user-details">
+                                                    <h6>Eddie Lobanovskiy</h6>
+                                                    <p>laboanovskiy@gmail.com</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="low-data">
+                                            <p> <i class="bi bi-arrow-down"></i> Low Data</p>
+                                            
+                                        </div>
+                                    </li>
+
+                                    <li class="d-flex justify-content-between align-items-center">
+                                        <div class="quick-actions-user-info">
+                                            <div class="d-flex">
+                                                <div class="img">
+                                                    <img src="assets/img/quick2.png" alt="">
+                                                </div>
+                                                <div class="user-details">
+                                                    <h6>Susan Bhasme</h6>
+                                                    <p>susan@gmail.com</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="low-data data-installed">
+                                            <p> <i class="bi bi-arrow-down"></i> Installed</p>
+                                            
+                                        </div>
+                                    </li>
+
+
+                                    <li class="d-flex justify-content-between align-items-center">
+                                        <div class="quick-actions-user-info">
+                                            <div class="d-flex">
+                                                <div class="img">
+                                                    <img src="assets/img/quick3.png" alt="">
+                                                </div>
+                                                <div class="user-details">
+                                                    <h6>Ruben </h6>
+                                                    <p>rub.en@gmail.com</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="low-data">
+                                            <p> <i class="bi bi-arrow-down"></i> Low Data</p>
+                                            
+                                        </div>
+                                    </li>
+
+
+                                    <li class="d-flex justify-content-between align-items-center">
+                                        <div class="quick-actions-user-info">
+                                            <div class="d-flex">
+                                                <div class="img">
+                                                    <img src="assets/img/quick4.png" alt="">
+                                                </div>
+                                                <div class="user-details">
+                                                    <h6>Sandhya Shankar</h6>
+                                                    <p>sshankar@gmail.com</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="low-data data-installed">
+                                            <p> <i class="bi bi-arrow-down"></i> Installed</p>
+                                            
+                                        </div>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+                            
+
+                            
+                        </div>
+                    </div>
+                
+                    
+
+                </div>
+                
+            </div>
+
+
+           
+            
+        </div>
+    </div>
+   
+
+</div>

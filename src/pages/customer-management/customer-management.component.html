@@ -1,0 +1,239 @@
+<div class="zet-db">
+
+    <div class="zet-toolbar pt-5 pb-3 py-lg-6">
+        <div class="container container-xxl">
+            <div class="zet-toolbar-wrapper d-flex justify-content-between align-items-center">
+                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+                    <h5 class="mb-0 fw-medium fs-4">Customer management</h5>
+                </div>
+
+                <div class="d-flex align-items-center gap-2 gap-lg-3">
+                    <div class="search-form">
+                        <div class="form-group has-search">
+                            <span class="form-control-feedback"><i class="bi bi-search"></i></span>
+                            <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchTerm" (keyup)="applyFilter()" >
+                        </div>
+                    </div>
+
+                    <div class="page-buttons ">
+                        <button (click)="add()" routerLink="/dashboard/add-product" mat-button><span
+                                class="material-symbols-outlined">
+                                add
+                            </span>Add Customer</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="zet-toolbar-tabs">
+                <ul>
+                    <li (click)="activeCustomers()" [class.active]="showActive">Active Customers</li>
+                    <li (click)="expired()" [class.active]="showExpired">Expired</li>
+                </ul>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="zet-content">
+        <div class="app-container container-xxl">
+            <div class="card">
+                <div class="card-body pt-0">
+                    <div class="table_wrapper" *ngIf="showActive">
+                        <div class="table-responsive">
+
+                            <table mat-table [dataSource]="dataSource">
+
+                                <ng-container matColumnDef="id">
+                                    <th mat-header-cell *matHeaderCellDef> Customer Id </th>
+                                    <td mat-cell *matCellDef="let element">
+                                        {{element.id}}
+                                    </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="name">
+                                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                                    <td mat-cell *matCellDef="let element">
+                                        <div class="d-flex user-card align-items-center">
+                                            <div *ngIf="element.profile_img" class="user-img me-3">
+                                                <img src="{{element.profile_img}}" alt="">
+                                            </div>
+                                            <div *ngIf="!element.profile_img"
+                                                class="user-name fw-medium text-center d-flex align-items-center justify-content-center me-3">
+                                                {{element.user_name.slice(0,1)}}
+                                            </div>
+                                            <h5 class="mb-0">{{element.user_name}}</h5>
+                                        </div>
+                                    </td>
+                                </ng-container>
+
+
+                                <ng-container matColumnDef="email">
+                                    <th mat-header-cell *matHeaderCellDef> Email </th>
+                                    <td mat-cell *matCellDef="let element">
+                                        {{element.email}}
+                                    </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="phone">
+                                    <th mat-header-cell *matHeaderCellDef> Phone Number </th>
+                                    <td mat-cell *matCellDef="let element">
+                                        {{element.phone}}
+                                    </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="nationality">
+                                    <th mat-header-cell *matHeaderCellDef> Country </th>
+                                    <td mat-cell *matCellDef="let element">
+                                        {{element.country}}
+                                    </td>
+                                </ng-container>
+                                <ng-container matColumnDef="eKYC">
+                                    <th mat-header-cell *matHeaderCellDef> eKYC </th>
+                                    <td mat-cell *matCellDef="let element">
+
+                                        <div (click)="ekycRejected(element)"  [ngClass]="{ 'badge-light-success': element.ekyc_completed,
+                                         'badge-light-warning': !element.ekyc_completed}"
+                                            class="badge" >                                           
+                                            {{element.ekyc_completed ? 'Completed' : 'Pending'}}
+                                        </div>
+                                    </td>
+
+                                </ng-container>
+
+                                <ng-container matColumnDef="actions">
+                                    <th mat-header-cell *matHeaderCellDef class="text-end"> Actions </th>
+                                    <td mat-cell *matCellDef="let element" class="text-end">
+                                        <div class="actions">
+                                            <button mat-button [matMenuTriggerFor]="menu"
+                                                aria-label="Example icon-button with a menu"> <span
+                                                    class="material-symbols-outlined">
+                                                    more_horiz
+                                                </span>
+                                            </button>
+
+                                            <mat-menu #menu="matMenu" class="table-action-menu">
+                                                <h6>Quick Actions</h6>
+                                                <button (click)="editUser(element)" mat-menu-item>
+                                                    <mat-icon><i class="bi bi-pencil"></i></mat-icon>
+                                                    <span>Edit Profile</span>
+                                                </button>
+                                                <button mat-menu-item>
+                                                    <mat-icon><i class="bi bi-toggle-off"></i></mat-icon>
+                                                    <span>In Active</span>
+                                                </button>
+
+                                            </mat-menu>
+
+
+                                        </div>
+                                    </td>
+                                </ng-container>
+
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                            </table>
+
+                            <mat-paginator [pageSizeOptions]="[10, 25, 35, 100]"
+                                aria-label="Select page of users"></mat-paginator>
+                        </div>
+                    </div>
+
+                    <div class="table_wrapper" *ngIf="showExpired">
+                        <div class="table-responsive">
+                            
+
+                            <table mat-table [dataSource]="dataSource">
+                                
+                                <!-- <div *ngIf="dataSource.data.length === 0"  class="no-records">
+                                    No records present
+                                </div> -->
+
+                                <ng-container matColumnDef="id">
+                                    <th mat-header-cell *matHeaderCellDef> Customer Id </th>
+                                    <td mat-cell *matCellDef="let element">
+                                        {{element.id}}
+                                    </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="name">
+                                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                                    <td mat-cell *matCellDef="let element">
+                                        <div class="d-flex user-card align-items-center">
+                                            <div *ngIf="element.img" class="user-img me-3">
+                                                <img src="{{element.img}}" alt="">
+                                            </div>
+                                            <div *ngIf="!element.img"
+                                                class="user-name fw-medium text-center d-flex align-items-center justify-content-center me-3">
+                                                {{element.name.slice(0,1)}}
+                                            </div>
+                                            <h5 class="mb-0">{{element.name}}</h5>
+                                        </div>
+                                    </td>
+                                </ng-container>
+
+
+                                <ng-container matColumnDef="email">
+                                    <th mat-header-cell *matHeaderCellDef> Email </th>
+                                    <td mat-cell *matCellDef="let element">
+                                        {{element.email}}
+                                    </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="phone">
+                                    <th mat-header-cell *matHeaderCellDef> Phone Number </th>
+                                    <td mat-cell *matCellDef="let element">
+                                        {{element.phone}}
+                                    </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="nationality">
+                                    <th mat-header-cell *matHeaderCellDef> Nationality </th>
+                                    <td mat-cell *matCellDef="let element">
+                                        {{element.nationality}}
+                                    </td>
+                                </ng-container>
+
+
+
+                                <ng-container matColumnDef="eKYC">
+                                    <th mat-header-cell *matHeaderCellDef> eKYC </th>
+                                    <td mat-cell *matCellDef="let element">
+
+                                        <div [ngClass]="{'badge-light-danger': element.eKYC == 'Rejected', 'badge-light-success': element.eKYC == 'Completed', 'badge-light-warning': element.eKYC == 'Pending'}"
+                                            class="badge">
+                                            {{element.eKYC}}
+                                        </div>
+
+                                    </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="actions">
+                                    <th mat-header-cell *matHeaderCellDef class="text-end"> Actions </th>
+                                    <td mat-cell *matCellDef="let element" class="text-end">
+                                        <div class="actions">
+                                            <button mat-button><span class="material-symbols-outlined">
+                                                    more_horiz
+                                                </span></button>
+                                        </div>
+                                    </td>
+                                </ng-container>
+
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                            </table>
+
+                            <mat-paginator [pageSizeOptions]="[10, 25, 35, 100]"
+                                aria-label="Select page of users"></mat-paginator>
+
+                               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

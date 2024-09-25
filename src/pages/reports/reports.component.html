@@ -1,0 +1,252 @@
+<div class="zet-db">
+
+
+    <!-- <rapi-doc
+      spec-url = "https://petstore.swagger.io/v2/swagger.json"
+    > </rapi-doc> -->
+ 
+    <!-- <div id="pagewrapper" class="container">
+        <div class="row">
+          <section class="todos-section-wrapper col-6">
+            <h2>Todo</h2>
+            <div
+              cdkDropList
+              #todoList="cdkDropList"
+              [cdkDropListData]="todos"
+              [cdkDropListConnectedTo]="[completedList]"
+              class="list"
+              (cdkDropListDropped)="drop($event)">
+              <div class="todo-item" *ngFor="let todo of todos" cdkDrag>{{todo}}</div>
+            </div>
+          </section>
+      
+          <section class="todos-section-wrapper col-6">
+            <h2>Done</h2>
+            <div
+              cdkDropList
+              #completedList="cdkDropList"
+              [cdkDropListData]="completedTodos"
+              [cdkDropListConnectedTo]="[todoList]"
+              class="list"
+              (cdkDropListDropped)="drop($event)">
+              <div class="todo-item" *ngFor="let todo of completedTodos" cdkDrag>{{todo}}</div>
+            </div>
+          </section>
+        </div>
+      </div>  -->
+
+    <div class="zet-toolbar pt-5 pb-3 py-lg-6">
+        <div class="container container-xxl">
+            <div class="zet-toolbar-wrapper d-flex justify-content-between align-items-center">
+                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+                    <h5 class="mb-0 fw-medium fs-4">Reports</h5>
+                </div>
+            </div>
+            <div class="total-sales-warper">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="total-sales-card">
+                            <div class="d-flex align-items-center">
+                                <div class="icon">
+                                    <img src="assets/img/total-sales.png" alt="">
+                                </div>
+                                <div class="sales-details">
+                                    <p>Total sales</p>
+                                    <h4>$ 24500 <strong>USD</strong></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="total-sales-card">
+                            <div class="d-flex align-items-center">
+                                <div class="icon">
+                                    <img src="assets/img/total-sales.png" alt="">
+                                </div>
+                                <div class="sales-details">
+                                    <p>Monthly Sales</p>
+                                    <h4>$ 938.00 <strong>USD <span>/Day</span> </strong></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="total-sales-card">
+                            <div class="d-flex align-items-center">
+                                <div class="icon">
+                                    <img src="assets/img/total-sales.png" alt="">
+                                </div>
+                                <div class="sales-details">
+                                    <p>Cumulative Margins</p>
+                                    <h4>$ 3675 <strong>USD</strong></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zet-toolbar-tabs">
+                <ul>
+                    <li (click)="activeCustomers()" [class.active]="showActive" >All</li>
+                    <li (click)="expired()" [class.active]="showExpired">Sales</li>
+                    <li>Margins</li>
+                    <li>Support Performance</li>
+                    <li>Refunds</li>
+                </ul>
+                
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="zet-content" >
+        <div class="app-container container-xxl" >
+         
+            <div class="cumulative-sales-wrapper" *ngIf="showActive">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card cumulative-card mt-3">
+                            <div class="cumulative-card-header d-flex justify-content-between align-items-center">
+                                <h2>Cumulative sales</h2>
+                                <div class="input-card input-card-width m-0">
+                                    <mat-form-field appearance="fill">
+                                        <mat-select placeholder="Month" >
+                                            <mat-option value="January">January</mat-option>
+                                            <mat-option value="February" >February</mat-option>
+                                            <mat-option value="March" >March</mat-option>
+                                          </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <!-- [view]="view"
+                                    [scheme]="colorScheme" -->
+
+                            <div class="liner-graph mt-4">
+                                <!-- <canvas #linearChart></canvas> -->
+                                <canvasjs-chart [options]="chartOptions" [styles]="{width: '95%', height:'360px'}" (chartInstance)="getChartInstance($event)"></canvasjs-chart>  
+
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="col-md-6">
+                        <div class="card cumulative-card mt-3">
+                            <div class="cumulative-card-header d-flex justify-content-between align-items-center">
+                                <h2>Popular countries</h2>
+                                <div class="input-card input-card-width m-0">
+                                    <mat-form-field appearance="fill">
+                                        <mat-select placeholder="Month" >
+                                            <mat-option value="January">January</mat-option>
+                                            <mat-option value="February" >February</mat-option>
+                                            <mat-option value="March" >March</mat-option>
+                                          </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            
+
+                            <div class="liner-graph mt-4">
+                                <canvasjs-chart [options]="chartOptions1" [styles]="{width: '95%', height:'300px'}" (chartInstance)="getChartInstance($event)"></canvasjs-chart>  
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <div class="card cumulative-card mt-3">
+                            <div class="cumulative-card-header d-flex justify-content-between align-items-center">
+                                <h2>Monthly sales</h2>
+                                <!-- <div class="input-card input-card-width m-0">
+                                    <mat-form-field appearance="fill">
+                                        <mat-select placeholder="Month" >
+                                            <mat-option value="January">January</mat-option>
+                                            <mat-option value="February" >February</mat-option>
+                                            <mat-option value="March" >March</mat-option>
+                                          </mat-select>
+                                    </mat-form-field>
+                                </div> -->
+                            </div>
+
+                            
+
+                            <div class="liner-graph mt-4">
+                                <canvasjs-chart [options]="chartOptions2" [styles]="{width: '95%', height:'360px'}" (chartInstance)="getChartInstance($event)"></canvasjs-chart>  
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card cumulative-card mt-3">
+                            <div class="cumulative-card-header d-flex justify-content-between align-items-center">
+                                <h2>Monthly sales</h2>
+                                <!-- <div class="input-card input-card-width m-0">
+                                    <mat-form-field appearance="fill">
+                                        <mat-select placeholder="Month" >
+                                            <mat-option value="January">January</mat-option>
+                                            <mat-option value="February" >February</mat-option>
+                                            <mat-option value="March" >March</mat-option>
+                                          </mat-select>
+                                    </mat-form-field>
+                                </div> -->
+                            </div>
+
+                            <div class="table_wrapper mt-3" >
+                                <div class="table-responsive">
+        
+                                    <table mat-table [dataSource]="dataSource">
+        
+                                        <ng-container matColumnDef="month">
+                                            <th mat-header-cell *matHeaderCellDef> Month </th>
+                                            <td mat-cell *matCellDef="let element">
+                                                {{element.month}}
+                                            </td>
+                                        </ng-container>
+        
+                                        <ng-container matColumnDef="eSIM">
+                                            <th mat-header-cell *matHeaderCellDef> eSIM </th>
+                                            <td mat-cell *matCellDef="let element">
+                                                {{element.eSIM}}
+                                               
+                                            </td>
+                                        </ng-container>
+        
+        
+                                        <ng-container matColumnDef="PhysicaleSIM">
+                                            <th mat-header-cell *matHeaderCellDef> Physical eSIM </th>
+                                            <td mat-cell *matCellDef="let element">
+                                                {{element.PhysicaleSIM}}
+                                            </td>
+                                        </ng-container>
+
+                                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+                                    </table>
+        
+                                  
+                                </div>
+                            </div>
+
+                            
+
+                            
+                        </div>
+                    </div>
+                
+                    
+
+                </div>
+                
+            </div>
+
+
+        </div>
+    </div>
+   
+
+</div>
